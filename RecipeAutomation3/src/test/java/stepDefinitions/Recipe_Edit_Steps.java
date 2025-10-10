@@ -9,19 +9,22 @@ public class Recipe_Edit_Steps {
 	
 	@When("User can edit a product name in recipe general")
 	public void user_can_edit_a_product_name_in_recipe_general() {
-	recipePage.navigateToRecipePage();
+	    recipePage.navigateToRecipePage();
+	    recipePage.editIcon();
+	    recipePage.productName("Testing Product");
+	    
+	    
 	}
 
 	@When("User can edit a Description in recipe general")
 	public void user_can_edit_a_description_in_recipe_general() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		recipePage.descriptionEdit("Automation testing");
 	}
 
 	@Then("User can give remarks and Edit")
 	public void user_can_give_remarks_and_edit() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		recipePage.remarksEdit("Remark");
+		recipePage.buttonEdit1();
 	}
 
 }

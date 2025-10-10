@@ -49,8 +49,7 @@ public class RecipePage extends BasePage {
     private By lowTolInput = By.xpath("//input[@name='lowTolerance']");
     private By highTolInput = By.xpath("//input[@name='highTolerance']");
     
-    //Recipe Edit Locaators
-    private By EditIcon = By.xpath("(//i[@class='icon-pencil icons font-1xl px-2 cp'])[1]");
+  
     
     // All Miscellaneous input fields
     private By miscFields = By.xpath("//label[contains(normalize-space(.), 'Mixer Override Time')]/following::input[1]");
@@ -60,7 +59,15 @@ public class RecipePage extends BasePage {
     
     private By recipeNameError = By.xpath("//div[contains(@class,'invalid-feedback') or contains(text(),'Recipe Name')]");
 
-
+    //Recipe Edit Locaators
+    private By EditIcon = By.xpath("(//i[@class='icon-pencil icons font-1xl px-2 cp'])[1]");
+    private By prodNameEdit = By.xpath("//input[@name='productName']");
+    private By descEdit = By.xpath("//textarea[@name='recipeDescription']");
+    private By remarksEdit = By.xpath("(//textarea[@name='recipeRemarks'])[1]");
+    private By buttonEdit = By.xpath("//button[@id='UncontrolledTooltipRecipeEditGen']");
+    
+    
+    
     public RecipePage(WebDriver driver) {
         super(driver);
     }
@@ -359,7 +366,33 @@ public class RecipePage extends BasePage {
 //        addBtn.click();
     }
 
+          public void editIcon() {
+        	  click(EditIcon);
+			
+		}
+          public void productName(String prodNamevalue) {
+        	  WebElement product = wait.until(ExpectedConditions.visibilityOfElementLocated(prodNameEdit));
+        	  product.clear();
+        	  product.sendKeys(prodNamevalue);
+			
+		}
 
-
-
+       public void descriptionEdit(String descriptionValue) {
+    	   WebElement desc = driver.findElement(descEdit);
+    	   desc.clear();
+    	   desc.sendKeys(descriptionValue);
+		
+	}
+       public void remarksEdit(String remarksValue) {
+    	   WebElement remarks = driver.findElement(remarksEdit);
+    	   remarks.clear();
+    	   remarks.sendKeys(remarksValue);
+		
+	}
+       
+       public void buttonEdit1() {
+    	  
+    	  click(buttonEdit);
+		
+	}
 }
