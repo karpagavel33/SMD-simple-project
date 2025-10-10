@@ -56,6 +56,6 @@ public class viewRecipe {
 	        Thread.sleep(3000);
 	        driver.findElement(By.xpath("//span[contains(text(),'Level 2 Release')]")).click();
 
-	        
+	       //xpath
 
 }}
